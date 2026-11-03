@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liam Baako #1243 | Pro Karting Analytics & Sponsor Hub</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased min-h-screen pb-16">
+
+  <!-- Top Navigation Header -->
+  <header class="bg-slate-900 border-b border-slate-800 sticky top-0 z-40 px-6 py-4 shadow-xl">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center gap-4">
+        <div class="h-12 w-12 rounded-xl bg-gradient-to-tr from-red-600 to-amber-500 flex items-center justify-center shadow-lg shadow-red-900/30">
+          <i data-lucide="trophy" class="h-6 w-6 text-white"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="bg-red-500/20 text-red-400 border border-red-500/30 text-xs px-2.5 py-0.5 rounded-full font-semibold">PRO DRIVER PROFILE</span>
+            <span class="text-slate-400 text-xs">ID #1243</span>
+          </div>
+          <h1 class="text-2xl font-black tracking-tight text-white flex items-center gap-2">
+            Liam Baako <span class="text-xs font-normal text-slate-400 bg-slate-800 px-2 py-1 rounded">Age 11</span>
+          </h1>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button id="open-sponsor-modal" class="bg-gradient-to-r from-red-600 to-amber-600 hover:from-red-500 hover:to-amber-500 text-white font-bold px-4 py-2 rounded-xl shadow-lg shadow-red-600/20 text-sm flex items-center gap-2 transition">
+          <i data-lucide="share-2" class="h-4 w-4"></i> Sponsor & Media Kit
+        </button>
+        <a href="https://github.com/phastafrican/Liam-Baako-Karting" target="_blank" rel="noreferrer" class="bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 px-4 py-2 rounded-xl text-sm font-medium flex items-center gap-2 transition">
+          <i data-lucide="external-link" class="h-4 w-4"></i> GitHub Repo
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Stats Ribbon -->
+  <div class="max-w-7xl mx-auto px-6 mt-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-lg relative overflow-hidden">
+        <div class="absolute right-3 top-3 text-red-500/10"><i data-lucide="zap" class="h-16 w-16"></i></div>
+        <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider">ProSkill Index</p>
+        <div class="flex items-baseline gap-2 mt-1">
+          <span class="text-3xl font-black text-white">1,243</span>
+          <span class="text-emerald-400 text-xs font-bold flex items-center"><i data-lucide="arrow-up-right" class="h-3 w-3 inline"></i>+49 Pts</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-2">Peak Rating: Elite Junior Class</p>
+      </div>
+
+      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-lg relative overflow-hidden">
+        <div class="absolute right-3 top-3 text-amber-500/10"><i data-lucide="timer" class="h-16 w-16"></i></div>
+        <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Carrera 2 Best Lap</p>
+        <div class="flex items-baseline gap-2 mt-1">
+          <span class="text-3xl font-black text-amber-400">25.623s</span>
+          <span class="text-xs text-slate-400">Kart 66</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-2">Avg top 5: 25.98s</p>
+      </div>
+
+      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-lg relative overflow-hidden">
+        <div class="absolute right-3 top-3 text-blue-500/10"><i data-lucide="trophy" class="h-16 w-16"></i></div>
+        <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Race Wins (1st)</p>
+        <div class="flex items-baseline gap-2 mt-1">
+          <span class="text-3xl font-black text-white">5 / 8</span>
+          <span class="text-emerald-400 text-xs font-bold">62.5% Win Rate</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-2">All Podiums (Top 3)</p>
+      </div>
+
+      <div class="bg-slate-900/80 border border-slate-800 rounded-2xl p-5 shadow-lg relative overflow-hidden">
+        <div class="absolute right-3 top-3 text-purple-500/10"><i data-lucide="activity" class="h-16 w-16"></i></div>
+        <p class="text-slate-400 text-xs font-semibold uppercase tracking-wider">Driver Rating</p>
+        <div class="flex items-baseline gap-2 mt-1">
+          <span class="text-3xl font-black text-purple-400">98.4</span>
+          <span class="text-xs text-slate-400">/ 100</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-2">Based on Apex & Consistency</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <main class="max-w-7xl mx-auto px-6 mt-8 space-y-8">
+
+    <!-- Track Filter & Section Tabs -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-slate-900/50 p-3 rounded-2xl border border-slate-800">
+      <div class="flex gap-2 bg-slate-900 p-1.5 rounded-xl border border-slate-800">
+        <button id="tab-overview" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition bg-red-600 text-white shadow">
+          Telemetry & Analytics
+        </button>
+        <button id="tab-sessions" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition text-slate-400 hover:text-white">
+          Session History (<span id="session-count-badge">8</span>)
+        </button>
+        <button id="tab-media" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition text-slate-400 hover:text-white">
+          Sponsor & Media Kit
+        </button>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <i data-lucide="filter" class="h-4 w-4 text-slate-400 ml-2"></i>
+        <span class="text-xs text-slate-400 font-medium">Layout Filter:</span>
+        <button class="track-filter-btn text-xs px-3 py-1.5 rounded-lg font-semibold transition bg-amber-500 text-slate-950 font-bold" data-track="All">All</button>
+        <button class="track-filter-btn text-xs px-3 py-1.5 rounded-lg font-semibold transition bg-slate-800 text-slate-300 hover:bg-slate-700" data-track="Carrera 2">Carrera 2</button>
+        <button class="track-filter-btn text-xs px-3 py-1.5 rounded-lg font-semibold transition bg-slate-800 text-slate-300 hover:bg-slate-700" data-track="Carrera Full">Carrera Full</button>
+      </div>
+    </div>
+
+    <!-- TAB 1: OVERVIEW & TELEMETRY -->
+    <div id="content-overview" class="tab-content grid grid-cols-1 lg:grid-cols-3 gap-8">
+      
+      <!-- Left 2 Cols: ProSkill Progression & Session Lap Breakdown -->
+      <div class="lg:col-span-2 space-y-8">
+        
+        <!-- ProSkill Chart -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl">
+          <div class="flex justify-between items-center mb-6">
+            <div>
+              <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                <i data-lucide="trending-up" class="h-5 w-5 text-red-500"></i> ProSkill Score Trajectory
+              </h2>
+              <p class="text-xs text-slate-400">Tracking score progression across all 8 ClubSpeed heat entries</p>
+            </div>
+            <span class="text-xs font-bold bg-slate-800 text-amber-400 px-3 py-1 rounded-full border border-slate-700">
+              Growth: +49 Pts
+            </span>
+          </div>
+          <div class="h-64 w-full">
+            <canvas id="proSkillChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Session Deep Dive Selector & Lap Times -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl">
+          <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+            <div>
+              <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                <i data-lucide="timer" class="h-5 w-5 text-amber-500"></i> Session Lap Deep Dive
+              </h2>
+              <p class="text-xs text-slate-400">Select a session to analyze individual lap times and traffic anomalies</p>
+            </div>
+            <select id="session-selector" class="bg-slate-800 border border-slate-700 text-white text-xs rounded-xl px-3 py-2 outline-none focus:border-red-500">
+              <!-- Dynamically populated -->
+            </select>
+          </div>
+
+          <!-- Session Header Stats -->
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 bg-slate-950/60 p-4 rounded-2xl border border-slate-800/80 mb-6">
+            <div class="p-3 bg-slate-950/60 rounded-xl border border-slate-800/80">
+              <span class="text-slate-400 text-xs">Track Layout</span>
+              <p id="active-session-track" class="font-bold text-white text-sm">Carrera 2</p>
+            </div>
+            <div class="p-3 bg-slate-950/60 rounded-xl border border-slate-800/80">
+              <span class="text-slate-400 text-xs">Machine / Kart</span>
+              <p id="active-session-kart" class="font-bold text-amber-400 text-sm">Kart 71</p>
+            </div>
+            <div class="p-3 bg-slate-950/60 rounded-xl border border-slate-800/80">
+              <span class="text-slate-400 text-xs">Best Lap Time</span>
+              <p id="active-session-best" class="font-bold text-emerald-400 text-sm">25.841s</p>
+            </div>
+            <div class="p-3 bg-slate-950/60 rounded-xl border border-slate-800/80">
+              <span class="text-slate-400 text-xs">Finish Position</span>
+              <p id="active-session-pos" class="font-bold text-white text-sm">1st (Junior Arrive & Drive)</p>
+            </div>
+          </div>
+
+          <!-- Lap Table -->
+          <div class="overflow-x-auto mt-4">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="border-b border-slate-800 text-xs text-slate-400 uppercase">
+                  <th class="py-3 px-4">Lap #</th>
+                  <th class="py-3 px-4">Lap Time</th>
+                  <th class="py-3 px-4">Delta to Best</th>
+                  <th class="py-3 px-4">Status</th>
+                </tr>
+              </thead>
+              <tbody id="lap-table-body" class="divide-y divide-slate-800/50 text-sm">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Right Col: Driver Radar & Kart Variance -->
+      <div class="space-y-8">
+        
+        <!-- Skill Radar -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl">
+          <h2 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+            <i data-lucide="shield" class="h-5 w-5 text-purple-400"></i> Driver Skill Matrix
+          </h2>
+          <p class="text-xs text-slate-400 mb-4">Telemetry-backed attribute breakdown for Liam</p>
+          <div class="h-64 w-full">
+            <canvas id="skillRadarChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Kart Performance Variance -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl">
+          <h2 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+            <i data-lucide="flame" class="h-5 w-5 text-amber-500"></i> Equipment & Kart Performance
+          </h2>
+          <p class="text-xs text-slate-400 mb-4">Best times clocked across different chassis</p>
+          <div class="space-y-3">
+            <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800 flex justify-between items-center">
+              <div>
+                <p class="font-bold text-white text-sm">Kart 66</p>
+                <p class="text-xs text-slate-400">Rocket Ship 🚀</p>
+              </div>
+              <div class="text-right">
+                <span class="text-amber-400 font-extrabold text-sm">25.623s</span>
+                <p class="text-xs text-slate-500">2 heat(s)</p>
+              </div>
+            </div>
+            <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800 flex justify-between items-center">
+              <div>
+                <p class="font-bold text-white text-sm">Kart 71</p>
+                <p class="text-xs text-slate-400">Strong Grip 🔥</p>
+              </div>
+              <div class="text-right">
+                <span class="text-amber-400 font-extrabold text-sm">25.841s</span>
+                <p class="text-xs text-slate-500">1 heat(s)</p>
+              </div>
+            </div>
+            <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800 flex justify-between items-center">
+              <div>
+                <p class="font-bold text-white text-sm">Kart 68</p>
+                <p class="text-xs text-slate-400">Balanced ⚡</p>
+              </div>
+              <div class="text-right">
+                <span class="text-amber-400 font-extrabold text-sm">26.049s</span>
+                <p class="text-xs text-slate-500">2 heat(s)</p>
+              </div>
+            </div>
+            <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800 flex justify-between items-center">
+              <div>
+                <p class="font-bold text-white text-sm">Kart 64</p>
+                <p class="text-xs text-slate-400">Solid ⏱️</p>
+              </div>
+              <div class="text-right">
+                <span class="text-amber-400 font-extrabold text-sm">26.180s</span>
+                <p class="text-xs text-slate-500">1 heat(s)</p>
+              </div>
+            </div>
+            <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800 flex justify-between items-center">
+              <div>
+                <p class="font-bold text-white text-sm">Kart 65</p>
+                <p class="text-xs text-slate-400">Moderate Push ⚠️</p>
+              </div>
+              <div class="text-right">
+                <span class="text-amber-400 font-extrabold text-sm">26.487s</span>
+                <p class="text-xs text-slate-500">1 heat(s)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TAB 2: SESSION HISTORY TABLE -->
+    <div id="content-sessions" class="tab-content hidden bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-xl">
+      <h2 class="text-xl font-bold text-white mb-2">Complete ClubSpeed Heat History</h2>
+      <p class="text-xs text-slate-400 mb-6">Showing all recorded sessions for Liam Baako (#1243)</p>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead>
+            <tr class="border-b border-slate-800 text-xs text-slate-400 uppercase">
+              <th class="py-3 px-4">Date & Time</th>
+              <th class="py-3 px-4">Track Layout</th>
+              <th class="py-3 px-4">Kart</th>
+              <th class="py-3 px-4">Best Lap</th>
+              <th class="py-3 px-4">Avg Lap</th>
+              <th class="py-3 px-4">Position</th>
+              <th class="py-3 px-4">ProSkill Delta</th>
+            </tr>
+          </thead>
+          <tbody id="session-history-table-body" class="divide-y divide-slate-800 text-sm">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 3: SPONSOR & MEDIA KIT -->
+    <div id="content-media" class="tab-content hidden bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-xl max-w-4xl mx-auto space-y-8">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 border-b border-slate-800 pb-6">
+        <div>
+          <span class="bg-red-500/20 text-red-400 border border-red-500/30 text-xs px-3 py-1 rounded-full font-bold">OFFICIAL ATHLETE MEDIA KIT</span>
+          <h2 class="text-3xl font-black text-white mt-2">Liam Baako — Junior Karting Prodigy</h2>
+          <p class="text-slate-400 text-sm mt-1">Ready for 2026/2027 Regional Indoor League Sponsorship & Partnerships</p>
+        </div>
+        <button id="media-kit-request-btn" class="bg-gradient-to-r from-red-600 to-amber-600 text-white font-bold px-6 py-3 rounded-2xl shadow-lg shadow-red-600/30 hover:opacity-95 transition">
+          Request Sponsorship Deck
+        </button>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
+          <i data-lucide="trophy" class="h-8 w-8 text-amber-400 mb-3"></i>
+          <h3 class="font-bold text-white text-lg">Dominant Race Record</h3>
+          <p class="text-slate-400 text-xs mt-2">5 First Place heat finishes out of 8 documented sessions. Consistent podium contender in Junior Arrive & Drive.</p>
+        </div>
+        <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
+          <i data-lucide="trending-up" class="h-8 w-8 text-emerald-400 mb-3"></i>
+          <h3 class="font-bold text-white text-lg">Rapid ProSkill Ascent</h3>
+          <p class="text-slate-400 text-xs mt-2">Climbed from ProSkill 1,196 to an elite 1,243 rating in under a month through meticulous data review.</p>
+        </div>
+        <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800">
+          <i data-lucide="zap" class="h-8 w-8 text-purple-400 mb-3"></i>
+          <h3 class="font-bold text-white text-lg">Analytical Mindset</h3>
+          <p class="text-slate-400 text-xs mt-2">At 11 years old, Liam studies apex speeds, throttle trace, and kart variance like a professional motorsport engineer.</p>
+        </div>
+      </div>
+
+      <div class="bg-slate-950/80 p-6 rounded-2xl border border-slate-800">
+        <h3 class="font-bold text-white text-base mb-3">Target Partnership Opportunities</h3>
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm text-slate-300">
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="h-4 w-4 text-emerald-400"></i> Karting Apparel & Gear Brands</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="h-4 w-4 text-emerald-400"></i> Local STEM & Youth Tech Sponsors</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="h-4 w-4 text-emerald-400"></i> Helmet & Visor Livery Partners</li>
+          <li class="flex items-center gap-2"><i data-lucide="check-circle" class="h-4 w-4 text-emerald-400"></i> Indoor Karting Academy Support</li>
+        </ul>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Sponsor Modal -->
+  <div id="sponsor-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-800 rounded-3xl max-w-lg w-full p-8 shadow-2xl relative">
+      <h3 class="text-2xl font-black text-white mb-2">Connect with Liam Baako</h3>
+      <p class="text-slate-400 text-xs mb-6">Interested in sponsoring Liam or requesting full high-res telemetry decks? Drop your details below.</p>
+      
+      <form id="sponsor-form" class="space-y-4">
+        <div>
+          <label class="text-xs text-slate-400 block mb-1 font-semibold">Your Name / Organization</label>
+          <input type="text" required placeholder="e.g. Red Bull Racing Academy / Apex Gear" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white outline-none focus:border-red-500">
+        </div>
+        <div>
+          <label class="text-xs text-slate-400 block mb-1 font-semibold">Email Address</label>
+          <input type="email" required placeholder="sponsor@brand.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white outline-none focus:border-red-500">
+        </div>
+        <div>
+          <label class="text-xs text-slate-400 block mb-1 font-semibold">Message / Partnership Inquiry</label>
+          <textarea rows="3" placeholder="We would love to discuss a partnership with Liam..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white outline-none focus:border-red-500"></textarea>
+        </div>
+        <div class="flex justify-end gap-3 mt-6">
+          <button type="button" id="close-sponsor-modal" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-5 py-2.5 rounded-xl text-sm font-semibold transition">
+            Cancel
+          </button>
+          <button type="submit" class="bg-red-600 hover:bg-red-500 text-white px-6 py-2.5 rounded-xl text-sm font-bold shadow-lg shadow-red-600/30 transition">
+            Send Inquiry
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
